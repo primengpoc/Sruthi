@@ -1,0 +1,19 @@
+.pi-star{
+    color: red;
+    font-size: xx-small;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color:rgb(26, 161, 26);
+}
+
+
+.btn-secondary {
+    margin-left: 15px;
+    background-color: rgb(82, 181, 247);
+}
+
+.pi-filter {
+    float: right;
+}

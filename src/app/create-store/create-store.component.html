@@ -1,0 +1,174 @@
+<div>
+    <form>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <h3>Create Store</h3>
+            </div>
+            <div class="ui-g-12">
+                <label>Management Division</label><i class="pi pi-star"></i>
+                <div>
+                     <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1" [ngModelOptions]="{standalone: true}">
+                     </p-dropdown>
+                 </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="separator">
+                    <hr>
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <h3>Store ID & Location</h3>
+            </div>
+            <div class="ui-g-4"> 
+                <label>StoreID</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter 3 digit Store ID</label>
+                </span>
+            </div>
+            <div class="ui-g-8">
+                <label>Store Name</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter Store Name</label>
+                </span>
+            </div>
+            <div class="ui-g-12">
+                <label>Street Address</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter Street Address</label>
+                </span>
+            </div>
+            <div class="ui-g-6">
+                <label>City</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter City</label>
+                </span>
+            </div>
+            <div class="ui-g-3">
+                <label>State</label><i class="pi pi-star"></i>
+                <div>
+                    <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1" [ngModelOptions]="{standalone: true}">
+                    </p-dropdown>
+                </div>
+            </div>
+            <div class="ui-g-3">
+                <label>Zip Code</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter Zip</label>
+                </span>
+            </div>
+            <div class="ui-g-6">
+                <label>Country Name</label><i class="pi pi-star"><i class="pi pi-question-circle"></i></i>
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText>
+                    <label for="float-input">Enter Country Name</label>
+                </span>
+            </div>
+            <div class="ui-g-12">
+                <h3>Store Detials</h3>
+            </div>
+            <div class="ui-g-3">
+                <p-panel >
+                    <p-header> Point of Sale</p-header>
+                    <div>
+                        <p-checkbox label="POS Active"></p-checkbox>
+                    </div>
+                    <br>
+                    <div>
+                        <p-checkbox label="Timer Based Batch Store"></p-checkbox>
+                    </div>
+                    <br>
+                    <div>
+                        <label>No. Price Changes Per Batch</label>
+                        <span class="ui-float-label">
+                            <input id="float-input" type="text" size="30" pInputText>
+                        </span>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Current Retail Batch Number</label>
+                        <span class="ui-float-label">
+                            <input id="float-input" type="text" size="30" pInputText>
+                        </span>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Scanning Build Date</label>
+                        <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Scanning Activity Date</label>
+                        <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+                    </div>
+                    <br>
+                </p-panel>
+            </div>
+            <div class="ui-g-4 pos1">
+                <p-panel >
+                    <p-header> Shell Tags </p-header>
+                    <div>
+                        <p-checkbox label="Generate Shelf Tags"></p-checkbox>
+                    </div>
+                    <br>
+                    <div>
+                        <p-checkbox label="Uses Bib Tags"></p-checkbox>
+                    </div>
+                    <br>
+                </p-panel>
+            </div>
+            <div class="ui-g-12">
+                <div class="separator">
+                    <hr>
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <h3>Store Promo Zones</h3>
+            </div>
+            <div class="ui-g-12">
+                    <label>Available:</label> 
+                    <input type="text" background-color="green" size="4"> 
+                    <label>Selected:</label> 
+                    <input type="text" size="2">
+            </div>
+            <div class="ui-g-4">
+                    <p-table [columns]="cols" [value]="cars" [(selection)]="selectedCars3" dataKey="vin" [scrollable]="true" scrollHeight="200px">
+                            <ng-template pTemplate="header" let-columns>
+                                <tr>
+                                    <th style="width: 3em"> Select All Promozones <br>
+                                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                    </th>
+                                    <th *ngFor="let col of columns" [pSortableColumn]="col.field" style="width:42px">
+                                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                                        {{col.header}}   <i class="pi pi-filter"></i>       
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                                <tr>
+                                    <td>
+                                        <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+                                    </td>
+                                    <td *ngFor="let col of columns">
+                                        {{rowData[col.field]}}
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+            </div>
+            <div class="ui-g-12">
+                <div class="separator">
+                    <hr>
+                </div>
+            </div>
+            <div class="ui-g-4">
+                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-secondary nav-item nav-link-edit" [routerLink]="['/store']">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
