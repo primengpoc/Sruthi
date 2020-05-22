@@ -1,0 +1,22 @@
+.pi-star{
+    color: red;
+    font-size: xx-small;
+    margin: 5px;
+}
+
+.pi-question-circle {
+    color: blue;
+    font-size: xx-small;
+    margin: 5px;
+}
+
+.btn-secondary {
+    margin-left: 15px;
+    background-color: slateblue;
+}
+
+.pi-filter {
+    float: right;
+}
+
+/* form label {font-weight:bold} */
